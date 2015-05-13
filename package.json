@@ -1,0 +1,37 @@
+{
+  "name": "es6-object-assign",
+  "version": "1.0.0",
+  "description": "ECMAScript 6 Object.assign polyfill and ponyfill",
+  "main": "src/index.js",
+  "scripts": {
+    "compile": "browserify src/index.js -o dist/object-assign.js --standalone ObjectAssign",
+    "compress": "uglifyjs dist/object-assign.js --compress --mangle > dist/object-assign.min.js",
+    "build": "npm run compile && npm run compress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rubennorte/es6-object-assign.git"
+  },
+  "keywords": [
+    "Object",
+    "assign",
+    "ES6",
+    "ECMAScript6",
+    "polyfill",
+    "ponyfill"
+  ],
+  "author": "Rubén Norte <rubennorte@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rubennorte/es6-object-assign/issues"
+  },
+  "homepage": "https://github.com/rubennorte/es6-object-assign",
+  "devDependencies": {
+    "browserify": "^10.1.3",
+    "uglify-js": "^2.4.21"
+  },
+  "files": [
+    "src",
+    "dist"
+  ]
+}
