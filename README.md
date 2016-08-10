@@ -35,7 +35,7 @@ require('es6-object-assign').polyfill();
 window.ObjectAssign.polyfill();
 ```
 
-As a ponyfill, loading the assign function to a variable:
+As a polyfill, loading the assign function to a variable:
 
 ```javascript
 var assign = require('es6-object-assign').assign;
