@@ -1,7 +1,7 @@
 {
   "name": "es6-object-assign",
   "version": "1.0.2",
-  "description": "ECMAScript 6 Object.assign polyfill and ponyfill",
+  "description": "ECMAScript 2015 (ES6) Object.assign polyfill and ponyfill",
   "main": "src/index.js",
   "scripts": {
     "compile": "browserify src/index.js -o dist/object-assign.js --standalone ObjectAssign",
@@ -16,7 +16,9 @@
     "Object",
     "assign",
     "ES6",
-    "ECMAScript6",
+    "ECMAScript 6",
+    "ES2015",
+    "ECMAScript 2015",
     "polyfill",
     "ponyfill"
   ],

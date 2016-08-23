@@ -3,44 +3,51 @@
 
 # ES6 Object.assign()
 
-ECMAScript 6 [Object.assign()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) polyfill and ponyfill.
+ECMAScript 2015 (ES2015/ES6) [Object.assign()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) polyfill and ponyfill for ECMAScript 5 environments.
 
 The main definition of this package has been copied from the polyfill defined in the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign).
 
 ## Installation
 
-### Node 
+### NPM
 
 ```bash
 npm install es6-object-assign
 ```
 
-### Browser
+### Manual download and import
 
 The package is also available as a UMD module (compatible with AMD, CommonJS and exposing a global variable `ObjectAssign`) in `dist/object-assign.js` and `dist/object-assign.min.js` (833 bytes minified and gzipped).
-
-It can be installed with npm or downloading the release from GitHub:
-
-```bash
-npm install es6-object-assign
-```
 
 ## Usage
 
 As a polyfill, defining Object.assign() if it is not already defined:
 
+**CommonJS**:
+
 ```javascript
+// Polyfill, modifying the global Object
 require('es6-object-assign').polyfill();
-// or
-window.ObjectAssign.polyfill();
+var obj = Object.assign({}, { foo: 'bar' });
+
+// Or ponyfill, using a reference to the function without modifying globals
+var assign = require('es6-object-assign').assign;
+var obj = assign({}, { foo: 'bar' });
 ```
 
-As a ponyfill, loading the assign function to a variable:
+**Globals**:
 
-```javascript
-var assign = require('es6-object-assign').assign;
-// or
-var assign = window.ObjectAssign.assign;
+```html
+<script src="<your-libs-directory>/object-assign.min.js"></script>
+<script>
+  // Polyfill, modifying the global Object
+  window.ObjectAssign.polyfill();
+  var obj = Object.assign({}, { foo: 'bar' });
+
+  // Or ponyfill, using a reference to the function without modifying globals
+  var assign = window.ObjectAssign.assign;
+  var obj = assign({}, { foo: 'bar' });
+</script>
 ```
 
 ## License
