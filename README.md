@@ -3,7 +3,7 @@
 
 # ES6 Object.assign()
 
-ECMAScript 2015 (ES2015/ES6) [Object.assign()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) polyfill and ponyfill for ECMAScript 5 environments.
+ECMAScript 2015 (ES2015/ES6) [Object.assign()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) polyfill and [ponyfill](https://ponyfill.com) for ECMAScript 5 environments.
 
 The main definition of this package has been copied from the polyfill defined in the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign).
 
