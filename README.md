@@ -19,15 +19,19 @@ npm install es6-object-assign
 
 The package is also available as a UMD module (compatible with AMD, CommonJS and exposing a global variable `ObjectAssign`) in `dist/object-assign.js` and `dist/object-assign.min.js` (833 bytes minified and gzipped).
 
-## Usage
+The versions with automatic polyfilling are `dist/object-assign-auto.js` and `dist/object-assign-auto.min.js`.
 
-As a polyfill, defining Object.assign() if it is not already defined:
+## Usage
 
 **CommonJS**:
 
 ```javascript
 // Polyfill, modifying the global Object
 require('es6-object-assign').polyfill();
+var obj = Object.assign({}, { foo: 'bar' });
+
+// Same version with automatic polyfilling
+require('es6-object-assign/auto');
 var obj = Object.assign({}, { foo: 'bar' });
 
 // Or ponyfill, using a reference to the function without modifying globals
@@ -37,14 +41,31 @@ var obj = assign({}, { foo: 'bar' });
 
 **Globals**:
 
+Manual polyfill:
+
 ```html
 <script src="<your-libs-directory>/object-assign.min.js"></script>
 <script>
   // Polyfill, modifying the global Object
   window.ObjectAssign.polyfill();
   var obj = Object.assign({}, { foo: 'bar' });
+</script>
+```
 
-  // Or ponyfill, using a reference to the function without modifying globals
+Automatic polyfill:
+
+```html
+<script src="<your-libs-directory>/object-assign-auto.min.js"></script>
+<script>
+  var obj = Object.assign({}, { foo: 'bar' });
+</script>
+```
+
+Ponyfill, without modifying globals:
+
+```html
+<script src="<your-libs-directory>/object-assign.min.js"></script>
+<script>
   var assign = window.ObjectAssign.assign;
   var obj = assign({}, { foo: 'bar' });
 </script>
@@ -54,7 +75,7 @@ var obj = assign({}, { foo: 'bar' });
 
 The MIT License (MIT)
 
-Copyright (c) 2015 Rubén Norte
+Copyright (c) 2017 Rubén Norte
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
