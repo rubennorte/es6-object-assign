@@ -1,6 +1,6 @@
 {
   "name": "es6-object-assign",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "ECMAScript 2015 (ES6) Object.assign polyfill and ponyfill",
   "main": "index.js",
   "scripts": {
